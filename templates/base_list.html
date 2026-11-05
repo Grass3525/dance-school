@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}List of objects{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+        <h1 class="h2 mb-0">Lista di {% block custom-type %}oggetti{% endblock %}</h1>
+        {% block add-new %}{% endblock %}
+    </div>
+    {% if object_list %}
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>{% block list-header %}<th>Id</th><th>Elemento</th>{% endblock %}</tr>
+                    </thead>
+                    <tbody>
+                        {% block list-body %}
+                            {% for el in object_list %}
+                                <tr>
+                                    <td>{{ el.id }}</td>
+                                    <td>{{ el }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endblock %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-light border">Nessun oggetto trovato!</div>
+    {% endif %}
+{% endblock %}

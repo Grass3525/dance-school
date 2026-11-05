@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Elimina Corso{% endblock %}
+{% block content %}
+    <div class="card form-card mx-auto" style="max-width: 36rem">
+        <div class="card-body p-4 p-md-5">
+            <h1 class="h3 mb-3">Conferma cancellazione del Corso {{ object.pk }}</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>
+                    Confermi la cancellazione del corso: <strong>{{ object.subject }}</strong>?
+                </p>
+                <input type="submit" value="Conferma" class="btn btn-danger px-4">
+                <a class="btn btn-link" href="{% url 'course_list' %}">Annulla</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

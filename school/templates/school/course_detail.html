@@ -1,0 +1,25 @@
+{% extends "base_detail.html" %}
+{% block detail-content %}
+    <dl class="row mb-4">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">{{ object.id }}</dd>
+        <dt class="col-sm-3">Nome</dt>
+        <dd class="col-sm-9">{{ object.subject }}</dd>
+        <dt class="col-sm-3">Scuola</dt>
+        <dd class="col-sm-9">{{ object.school }}</dd>
+        <dt class="col-sm-3">Sala</dt>
+        <dd class="col-sm-9">{{ object.classroom }}</dd>
+        <dt class="col-sm-3">Giorno</dt>
+        <dd class="col-sm-9">{{ object.day_of_the_week }}</dd>
+        <dt class="col-sm-3">Ora inizio</dt>
+        <dd class="col-sm-9">{{ object.starting_hour }}</dd>
+    </dl>
+    <a class="btn btn-outline-brand"
+       href="{% url 'course_list' %}"
+       title="Torna alla lista dei corsi">&larr; Torna alla lista</a>
+    {% if perms.school.change_course %}
+        <a class="btn btn-outline-secondary"
+           href="{% url 'course_update' object.id %}"
+           title="Modifica corso">Modifica</a>
+    {% endif %}
+{% endblock %}

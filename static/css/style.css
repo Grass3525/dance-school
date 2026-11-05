@@ -1,0 +1,212 @@
+:root {
+  --brand: #6a1b4d;
+  --brand-dark: #4a1236;
+  --accent: #e0457b;
+  --bg: #faf6f9;
+  --ink: #2b2230;
+  --muted: #7d7285;
+  --radius: 0.9rem;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand);
+}
+
+/* ---------- Navbar ---------- */
+.site-nav {
+  background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+  box-shadow: 0 2px 12px rgb(0 0 0 / 20%);
+}
+
+.site-nav .navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.site-nav .navbar-brand img {
+  height: 2.4rem;
+  width: 2.4rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  background: #fff;
+}
+
+.site-nav .nav-link {
+  color: rgb(255 255 255 / 75%);
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  margin: 0 0.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: #fff;
+  background: rgb(255 255 255 / 16%);
+}
+
+/* ---------- Layout ---------- */
+main {
+  flex: 1;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer {
+  background: var(--brand-dark);
+  color: rgb(255 255 255 / 80%);
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer address,
+.site-footer p {
+  margin: 0.15rem 0;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgb(106 27 77 / 25%);
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: calc(1.8rem + 1.5vw);
+}
+
+.hero p {
+  opacity: 0.9;
+  max-width: 36rem;
+  margin: 1rem auto 2rem;
+}
+
+.hero .btn-light {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* ---------- Cards, tables ---------- */
+.card {
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 18px rgb(106 27 77 / 8%);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: #f3e6ee;
+  color: var(--brand-dark);
+  font-weight: 600;
+  border-bottom: 0;
+  padding: 0.9rem 1rem;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+}
+
+.table-hover > tbody > tr:hover > * {
+  background: #fbeff5;
+}
+
+/* ---------- Buttons ---------- */
+.btn-brand {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
+}
+
+.btn-outline-brand {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-outline-brand:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* ---------- Detail ---------- */
+.detail-card dt {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.detail-card dd {
+  font-weight: 500;
+}
+
+/* ---------- Forms ---------- */
+.form-card form p {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card form label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--brand-dark);
+}
+
+.form-card form input:not([type="submit"]):not([type="hidden"]),
+.form-card form select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d9cdd5;
+  border-radius: 0.55rem;
+  background: #fff;
+  font: inherit;
+}
+
+.form-card form input:focus,
+.form-card form select:focus {
+  outline: 0;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgb(224 69 123 / 20%);
+}
+
+.form-card .errorlist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.3rem;
+  color: #c0204f;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,24 @@
+{% extends "base_list.html" %}
+{% block title %}Giorni{% endblock %}
+{% block custom-type %}giorni della settimana{% endblock %}
+{% block list-header %}<th>Id</th><th>Nome</th><th>Numero</th><th></th>{% endblock %}
+{% block list-body %}
+    {% for el in object_list %}
+        <tr>
+            <td>{{ el.id }}</td>
+            <td class="fw-semibold">{{ el.name }}</td>
+            <td>{{ el.number }}</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-outline-brand" href="{% url 'dayoftheweek_detail' el.id %}">Mostra</a>
+                {% if perms.school.change_dayoftheweek %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'dayoftheweek_update' el.id %}">Modifica</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+{% block add-new %}
+    {% if perms.school.add_dayoftheweek %}
+        <a class="btn btn-brand" href="{% url 'dayoftheweek_create' %}">+ Aggiungi nuovo</a>
+    {% endif %}
+{% endblock %}

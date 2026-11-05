@@ -1,0 +1,16 @@
+{% extends "base_list.html" %}
+{% block title %}Scuole{% endblock %}
+{% block custom-type %}scuole{% endblock %}
+{% block list-header %}<th>Nome</th><th>Indirizzo</th><th>Telefono</th><th>Email</th>{% endblock %}
+{% block list-body %}
+    {% for object in object_list %}
+        <tr>
+            <td>
+                <a class="fw-semibold" href="{% url 'dettaglio_scuola' object.pk %}">{{ object.name }}</a>
+            </td>
+            <td>{{ object.street }}</td>
+            <td>{{ object.phone|default:"-" }}</td>
+            <td>{{ object.email|default:"-" }}</td>
+        </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base_list.html" %}
+{% block title %}Corsi{% endblock %}
+{% block custom-type %}corsi{% endblock %}
+{% block list-header %}<th>Id</th><th>Nome</th><th></th>{% endblock %}
+{% block list-body %}
+    {% for el in object_list %}
+        <tr>
+            <td>{{ el.id }}</td>
+            <td class="fw-semibold">{{ el.subject }}</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-outline-brand" href="{% url 'course_detail' el.id %}">Mostra</a>
+                {% if perms.school.change_course %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'course_update' el.id %}">Modifica</a>
+                {% endif %}
+                {% if perms.school.delete_course %}
+                    <a class="btn btn-sm btn-outline-danger" href="{% url 'course_delete' el.id %}">Elimina</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+{% block add-new %}
+    {% if perms.school.add_course %}
+        <a class="btn btn-brand" href="{% url 'course_create' %}">+ Aggiungi nuovo</a>
+    {% endif %}
+{% endblock %}

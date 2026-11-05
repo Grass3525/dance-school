@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Chi siamo{% endblock %}
+{% block content %}
+    <div class="card">
+        <div class="card-body p-4 p-md-5">
+            <h1 class="mb-4">Benvenuti nella nostra scuola di danza!</h1>
+            <p class="lead">
+                Siamo una scuola di danza nata da una passione semplice: credere che
+                ballare sia per tutti, a qualsiasi età e a qualsiasi livello.
+            </p>
+            <p>
+                Che tu abbia tre anni o settanta, che tu non abbia mai messo piede in una
+                sala o sogni di salire su un palco, da noi troverai un corso pensato per te.
+                Proponiamo percorsi per bambini, ragazzi e adulti, dalla danza classica e
+                moderna ai balli latino-americani e di coppia, fino all'hip hop e alla danza
+                contemporanea.
+            </p>
+            <h2 class="h4 mt-4">Il nostro metodo</h2>
+            <p>
+                I gruppi sono pensati per restare piccoli, così ogni insegnante può seguire
+                da vicino i progressi di ciascun allievo. Lavoriamo sulla tecnica, ma anche
+                sul divertimento: crediamo che si impari meglio quando ci si sente a proprio
+                agio. Durante l'anno organizziamo saggi, lezioni aperte e serate a tema, per
+                mettere in pratica quello che si è imparato insieme agli altri allievi.
+            </p>
+            <h2 class="h4 mt-4">Le nostre sedi</h2>
+            <p class="mb-0">
+                Oltre alla sede principale, abbiamo due succursali con sale luminose,
+                pavimenti professionali e orari distribuiti su tutta la settimana, per
+                conciliare la danza con scuola e lavoro. Puoi consultare l'elenco delle
+                <a href="{% url 'lista_scuole' %}">sedi</a> e quello dei
+                <a href="{% url 'course_list' %}">corsi</a> per scegliere quello più comodo.
+                Se hai dubbi sul livello giusto per iniziare, scrivici o passa a trovarci:
+                la prima prova è sempre un'occasione per conoscerci.
+            </p>
+        </div>
+    </div>
+{% endblock %}

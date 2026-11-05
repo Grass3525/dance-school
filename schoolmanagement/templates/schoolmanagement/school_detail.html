@@ -1,0 +1,30 @@
+{% extends "base_detail.html" %}
+{% block title %}{{ object.name }}{% endblock %}
+{% block content %}
+    <div class="card detail-card">
+        <div class="card-body p-4 p-md-5">
+            <h1 class="h2 mb-4">{{ object.name }}</h1>
+            <dl class="row mb-4">
+                <dt class="col-sm-3">Indirizzo</dt>
+                <dd class="col-sm-9">{{ object.street }}, {{ object.zip_code }} {{ object.city }} ({{ object.province }})</dd>
+                <dt class="col-sm-3">Paese</dt>
+                <dd class="col-sm-9">{{ object.country }}</dd>
+                <dt class="col-sm-3">Sito web</dt>
+                <dd class="col-sm-9">
+                    {% if object.website %}
+                        <a href="{{ object.website }}" target="_blank" rel="noopener">{{ object.website }}</a>
+                    {% else %}
+                        -
+                    {% endif %}
+                </dd>
+                <dt class="col-sm-3">Telefono</dt>
+                <dd class="col-sm-9">{{ object.phone|default:"-" }}</dd>
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">{{ object.email|default:"-" }}</dd>
+                <dt class="col-sm-3">P. IVA</dt>
+                <dd class="col-sm-9">{{ object.vat|default:"-" }}</dd>
+            </dl>
+            <a class="btn btn-outline-brand" href="{% url 'lista_scuole' %}">&larr; Torna alla lista</a>
+        </div>
+    </div>
+{% endblock %}

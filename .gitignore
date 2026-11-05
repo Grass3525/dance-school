@@ -1,0 +1,58 @@
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.log
+*.log.*
+
+# environments
+.venv
+venv
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+media/
+local_settings.py
+
+# configurations
+*.env
+!template*.env
+*.ini
+!template*.ini
+*.toml
+!pyproject.toml
+!ruff.toml
+!template*.toml
+data.csv
+
+# Certificates and Keys
+*.crt
+*.key
+*.pem
+
+# tools and caches
+.ruff_cache
+.mypy_cache
+.pytest_cache
+
+# unittest and cobertura
+.coverage
+htmlcov/
+coverage.xml
+report.xml
+
+# docker and compose
+compose*.y*ml
+docker-compose*.y*ml
+
+# prettier node_modules
+node_modules

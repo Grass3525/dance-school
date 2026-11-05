@@ -1,0 +1,61 @@
+from django.urls import path
+
+from school import views
+
+urlpatterns = [
+    path(
+        "corsi/",
+        views.CourseListView.as_view(),
+        name="course_list",
+    ),
+    path(
+        "corsi/<int:pk>/",
+        views.CourseDetailView.as_view(),
+        name="course_detail",
+    ),
+    path(
+        "corsi/<int:pk>/elimina/",
+        views.CourseDeleteView.as_view(),
+        name="course_delete",
+    ),
+    path(
+        "corsi/nuovo/",
+        views.CourseCreateView.as_view(),
+        name="course_create",
+    ),
+    path(
+        "corsi/<int:pk>/modifica/",
+        views.CourseUpdateView.as_view(),
+        name="course_update",
+    ),
+    path(
+        "classi/",
+        views.ClassroomListView.as_view(),
+        name="classroom_list",
+    ),
+    path(
+        "classi/<int:pk>/",
+        views.ClassroomDetailView.as_view(),
+        name="classroom_detail",
+    ),
+    path(
+        "giorni/",
+        views.DayOfTheWeekListView.as_view(),
+        name="dayoftheweek_list",
+    ),
+    path(
+        "giorni/<int:pk>/",
+        views.DayOfTheWeekDetailView.as_view(),
+        name="dayoftheweek_detail",
+    ),
+    path(
+        "giorni/nuovo/",
+        views.DayOfTheWeekCreateView.as_view(),
+        name="dayoftheweek_create",
+    ),
+    path(
+        "giorni/<int:pk>/modifica/",
+        views.DayOfTheWeekUpdateView.as_view(),
+        name="dayoftheweek_update",
+    ),
+]

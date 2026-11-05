@@ -1,0 +1,15 @@
+{% extends "base_detail.html" %}
+{% block detail-content %}
+    <dl class="row mb-4">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">{{ object.id }}</dd>
+        <dt class="col-sm-3">Nome</dt>
+        <dd class="col-sm-9">{{ object.name }}</dd>
+        <dt class="col-sm-3">Numero</dt>
+        <dd class="col-sm-9">{{ object.number }}</dd>
+    </dl>
+    <a class="btn btn-outline-brand" href="{% url 'dayoftheweek_list' %}">&larr; Torna alla lista</a>
+    {% if perms.school.change_dayoftheweek %}
+        <a class="btn btn-outline-secondary" href="{% url 'dayoftheweek_update' object.id %}">Modifica</a>
+    {% endif %}
+{% endblock %}
