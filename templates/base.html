@@ -44,6 +44,11 @@
                                title="Vai a Lista delle Scuole">Scuole</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {% if '/school-conf/orario/' in request.path %}active{% endif %}"
+                               href="{% url 'timetable' %}"
+                               title="Vai all'Orario settimanale">Orario</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if '/school-conf/corsi/' in request.path %}active{% endif %}"
                                href="{% url 'course_list' %}"
                                title="Vai a Lista dei Corsi">Corsi</a>
@@ -58,11 +63,29 @@
                                href="{% url 'dayoftheweek_list' %}"
                                title="Vai a Lista dei Giorni">Giorni</a>
                         </li>
-                        <li class="nav-item ms-lg-2">
-                            <a class="btn btn-sm btn-light"
-                               href="{% url 'admin:login' %}"
-                               title="Vai al Pannello di Amministrazione">Admin</a>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item ms-lg-2 text-white-50 small">Ciao, {{ user.username }}</li>
+                            {% if user.is_staff %}
+                                <li class="nav-item ms-lg-2">
+                                    <a class="btn btn-sm btn-light"
+                                       href="{% url 'admin:index' %}"
+                                       title="Vai al Pannello di Amministrazione">Admin</a>
+                                </li>
+                            {% endif %}
+                            <li class="nav-item ms-lg-2">
+                                <form method="post" action="{% url 'logout' %}" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-sm btn-outline-light" href="{% url 'login' %}">Login</a>
+                            </li>
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-sm btn-light" href="{% url 'signup' %}">Registrati</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

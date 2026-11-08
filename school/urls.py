@@ -4,6 +4,11 @@ from school import views
 
 urlpatterns = [
     path(
+        "orario/",
+        views.TimetableView.as_view(),
+        name="timetable",
+    ),
+    path(
         "corsi/",
         views.CourseListView.as_view(),
         name="course_list",
