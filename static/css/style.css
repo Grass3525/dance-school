@@ -30,7 +30,6 @@ a:hover {
   color: var(--brand);
 }
 
-/* ---------- Navbar ---------- */
 .site-nav {
   background: linear-gradient(90deg, var(--brand-dark), var(--brand));
   box-shadow: 0 2px 12px rgb(0 0 0 / 20%);
@@ -64,7 +63,6 @@ a:hover {
   background: rgb(255 255 255 / 16%);
 }
 
-/* ---------- Layout ---------- */
 main {
   flex: 1;
   padding-top: 2.5rem;
@@ -87,7 +85,6 @@ main {
   margin: 0.15rem 0;
 }
 
-/* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(135deg, var(--brand), var(--accent));
   color: #fff;
@@ -113,7 +110,6 @@ main {
   font-weight: 600;
 }
 
-/* ---------- Cards, tables ---------- */
 .card {
   border: 0;
   border-radius: var(--radius);
@@ -140,7 +136,6 @@ main {
   background: #fbeff5;
 }
 
-/* ---------- Buttons ---------- */
 .btn-brand {
   background: var(--brand);
   border-color: var(--brand);
@@ -164,7 +159,6 @@ main {
   color: #fff;
 }
 
-/* ---------- Detail ---------- */
 .detail-card dt {
   color: var(--muted);
   font-weight: 500;
@@ -174,7 +168,6 @@ main {
   font-weight: 500;
 }
 
-/* ---------- Forms ---------- */
 .form-card form p {
   margin-bottom: 1.1rem;
   display: flex;
